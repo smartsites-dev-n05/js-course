@@ -1,0 +1,68 @@
+body {
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+form {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+input {
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+}
+
+.form-group {
+    width: 32%;
+    padding: 5px 0;
+}
+
+.btn-holder {
+    width: 100%;
+    text-align: center;
+}
+
+button {
+    display: inline-block;
+    padding: 10px 20px;
+    width: 200px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.slider {
+    transition: .2s all ease-in-out;
+}
+
+img {
+    transition: .3s all ease-in-out;
+    max-width: 100%;
+    opacity: 1;
+}
+
+img.hide {
+    opacity: 0;
+}
+
+.image-wrapper {
+    transition: .2s all ease-in-out;
+}
+
+.slider2 {
+    max-width: 100%;
+    overflow: hidden;
+
+}
+
+.image-wrapper img {
+    float: left;
+}

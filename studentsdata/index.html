@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Students Data Fill</title>
+</head>
+<body>
+
+<h1 class="mainHeading text-center">Student's Data</h1><!--/.mainHeading-->
+
+<form action="#" class="form-holder">
+    <div class="form-group">
+        <input type="text" class="inputField" name="name" placeholder="Student's name">
+        <span class="errorMessage"></span><!--/.errorMessage-->
+    </div><!--/.form-group-->
+    <div class="form-group">
+        <input type="text" class="inputField number" name="maths" placeholder="Maths">
+        <span class="errorMessage"></span><!--/.errorMessage-->
+    </div><!--/.form-group-->
+    <div class="form-group">
+        <input type="text" class="inputField number" name="science" placeholder="Science">
+        <span class="errorMessage"></span><!--/.errorMessage-->
+    </div><!--/.form-group-->
+    <div class="form-group">
+        <input type="text" class="inputField number" name="nepali" placeholder="Nepali">
+        <span class="errorMessage"></span><!--/.errorMessage-->
+    </div><!--/.form-group-->
+    <div class="form-group fullWidth">
+        <textarea placeholder="Remarks" name="remark" class="inputField"></textarea>
+    </div><!--/.form-group-->
+    <div class="form-group fullWidth text-center">
+        <button type="submit" class="btn btn-primary submitButton">Submit</button>
+    </div><!--/buttonHolder-->
+</form><!--/.form-holder-->
+
+<div class="dataHolder text-center">
+    <table>
+        <tbody id="studentsData">
+            <tr class="headings">
+                <th>S/N</th>
+                <th>Student's Name</th>
+                <th>Maths</th>
+                <th>Science</th>
+                <th>Nepali</th>
+                <th>Remarks</th>
+            </tr>
+        </tbody>
+    </table><!--/.studentsData-->
+</div><!--/.dataHolder-->
+
+<script src="assets/js/scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+.key {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #ff0000;
+    color: #fff;
+    text-decoration: none;
+    text-transform: capitalize;
+    position: absolute;
+}
+
+body {
+    margin: 0;
+}
