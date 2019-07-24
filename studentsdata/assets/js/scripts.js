@@ -18,6 +18,7 @@ let checkIfNumber = () => {
         if (isNaN(inputValue)) {
             test = false;
             integerFields[i].nextElementSibling.innerHTML = 'Numbers Only';
+            break;
         } else {
             test = true;
             console.log(integerFields[i], inputValue, 'the else');
@@ -71,11 +72,10 @@ function fetchData() {
     }
 }
 
-let formSubmit = function(){
+let formSubmit = function(e){
+    e.preventDefault();
     if(checkIfNumber()){
         fetchData();
-    } else {
-        alert('Validation Error');
     }
 };
 
