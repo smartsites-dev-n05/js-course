@@ -71,8 +71,12 @@ function fetchData() {
     }
 }
 
-if(){
+let formSubmit = function(){
+    if(checkIfNumber()){
+        fetchData();
+    } else {
+        alert('Validation Error');
+    }
+};
 
-}
-
-document.addEventListener('submit', fetchData);
+document.addEventListener('submit', formSubmit);
