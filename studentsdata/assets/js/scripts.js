@@ -1,4 +1,12 @@
 let allData = [];
+var localData = localStorage.getItem('infos')
+//Parse converts string to correct data type
+var localObj = JSON.parse(localData)
+
+if(localObj && localObj.length > 0){
+    allData = localObj
+    generateHTMLData(allData)
+}
 
 let integerFields = document.querySelectorAll('.number');
 
@@ -18,7 +26,7 @@ let checkIfNumber = () => {
         if (isNaN(inputValue)) {
             test = false;
             integerFields[i].nextElementSibling.innerHTML = 'Numbers Only';
-            break;
+            continue;
         } else {
             test = true;
             console.log(integerFields[i], inputValue, 'the else');
@@ -32,10 +40,6 @@ function fetchData() {
 
     let inputFields = document.getElementsByClassName('inputField');
 
-    let studentData = document.getElementById('studentsData');
-
-    let tr = document.createElement('tr');
-
     let obj = {};
     //Store Data on Array
     for (let i = 0; i < inputFields.length; i++) {
@@ -48,10 +52,23 @@ function fetchData() {
     }
 
     allData.push(obj);
-    console.log(allData);
-
+    
+    generateHTMLData(allData)
     //Fetch From Array Function
-    allData.forEach(function (value, index) {
+   
+    localStorage.setItem("infos", JSON.stringify(allData))
+   
+
+    //Removing Stored Data on Array
+    for (let i = 0; i < inputFields.length; i++) {
+        inputFields[i].value = '';
+    }
+}
+
+function generateHTMLData(data){
+    let studentData = document.getElementById('studentsData');
+    data.forEach(function (value, index) {
+        let tr = document.createElement('tr');
         tr.innerHTML = `
             <td>${index + 1}</td>
             <td>${value.name}</td>
@@ -60,17 +77,12 @@ function fetchData() {
             <td>${value.science}</td>
             <td>${value.remark}</td>
         `;
+        
+        studentData.appendChild(tr);
     });
+    
 
-    studentData.appendChild(tr);
-
-    console.log('obj', tr);
-
-    //Removing Stored Data on Array
-    for (let i = 0; i < inputFields.length; i++) {
-        inputFields[i].value = '';
-    }
-}
+}   
 
 let formSubmit = function(e){
     e.preventDefault();
@@ -79,4 +91,4 @@ let formSubmit = function(e){
     }
 };
 
-document.addEventListener('submit', formSubmit);
+document.querySelector('form').addEventListener('submit', formSubmit);
